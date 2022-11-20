@@ -1,0 +1,161 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+                                              .frame {
+                                                  position: absolute;
+                                                  background-color: #3cac84;
+                                                  top: 50%;
+                                                  left: 50%;
+                                                  width: 400px;
+                                                  height: 400px;
+                                                  margin-top: -200px;
+                                                  margin-left: -200px;
+                                                  border-radius: 10px;
+                                                  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+                                                  overflow: hidden;
+                                                  color: #333;
+                                                  font-family: 'Open Sans', Helvetica, sans-serif;
+                                                  -webkit-font-smoothing: antialiased;
+                                                  -moz-osx-font-smoothing: grayscale;
+                                              }
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    cursor: grab;
+    transition: all 0.3s;
+}
+
+.center.active .tab {
+    margin: 0;
+}
+
+.center.inactive .tab {
+    animation: none;
+}
+
+.tab {
+    width: 100px;
+    height: 10px;
+    margin: 12px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px #333333;
+
+}
+
+.center .tab:nth-of-type(2) {
+    animation: center-tab-rev 0.6s forwards;
+}
+
+.center .tab:nth-of-type(1) {
+    animation: x-to-burger-upper 0.6s forwards;
+}
+
+.center .tab:nth-of-type(3) {
+    animation: x-to-burger-lower 0.6s forwards;
+}
+.center.active .tab:nth-of-type(2) {
+    animation: center-tab 0.6s forwards;
+}
+
+.center.active .tab:nth-of-type(1) {
+    animation: burger-to-x-upper 0.6s forwards;
+}
+
+.center.active .tab:nth-of-type(3) {
+    animation: burger-to-x-lower 0.6s forwards;
+}
+
+
+@keyframes center-tab-rev {
+    0%{
+        transform: scale(0%);
+        margin: 0;
+    }
+    50%{
+        transform: scale(0%);
+        margin: 0;
+    }
+    100%{
+        transform: scale(100%);
+        margin: 12px;
+    }
+}
+@keyframes center-tab {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(0%);
+    }
+    100%{
+        transform: scale(0%);
+    }
+}
+
+@keyframes burger-to-x-upper {
+    50% {
+        transform: translateY(10px);
+        transform-origin: center;
+    }
+    100% {
+        transform: translateY(10px) rotate(-135deg);
+        transform-origin: center
+    }
+}
+@keyframes burger-to-x-lower {
+    50% {
+        transform: translateY(-10px);
+        transform-origin: center
+    }
+    100% {
+        transform: translateY(-10px) rotate(135deg);
+        transform-origin: center
+    }
+}
+
+@keyframes x-to-burger-upper {
+    0%{
+        transform: translateY(10px) rotate(45deg);
+        transform-origin: center;
+        margin: 0;
+    }
+    50% {
+        transform: translateY(10px) rotate(0deg);
+        transform-origin: center;
+        margin: 0;
+
+    }
+    100% {
+        transform: translateY(0px);
+        transform-origin: center;
+        margin: 12px;
+    }
+}
+@keyframes x-to-burger-lower {
+    0%{
+        transform: translateY(-10px) rotate(-45deg);
+        transform-origin: center;
+        margin: 0;
+    }
+    50% {
+        transform: translateY(-10px) rotate(0deg);
+        transform-origin: center;
+        margin: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        transform-origin: center;
+        margin: 12px;
+    }
+}
+
+
+
+
+
