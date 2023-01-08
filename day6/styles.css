@@ -1,0 +1,176 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 10px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(45deg, rgba(238,189,108,255), rgba(202,125,78,255));
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #786450;
+}
+
+.card {
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 200px 120px;
+    grid-template-rows: repeat(3, 99px);
+    grid-template-areas:
+        "profile posts"
+        "profile likes"
+        "profile followers";
+    gap: 1.5px 0px;
+    width: 320px;
+    height: 300px;
+    background-color: white;
+    margin: 20px 15px;
+}
+
+.box{
+    display: grid;
+    place-items: center;
+    background-color: rgba(245,232,223,255);
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.box:hover{
+    filter: brightness(80%);
+}
+
+.profile{
+    color: #786450;
+    grid-area: profile;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+.posts {
+    grid-area: posts;
+    border-radius: 0 4px 0 0;
+}
+
+.likes{
+    grid-area: likes;
+}
+
+.followers {
+    grid-area: followers;
+    border-radius: 0 0 4px 0;
+}
+
+.value{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.attribute {
+    font-size: 11px;
+}
+
+.name{
+    padding-top: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons > button{
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px;
+    color: inherit;
+    border: 1px solid;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons > button:hover{
+    color: white;
+    background-color: #786450;
+}
+
+.circle {
+    position: absolute;
+    border: 2px solid;
+    border-radius: 50px;
+    transition: all 1.5s ease-in-out;
+}
+
+.inner-circle{
+    top: 3px;
+    left: 3px;
+    width: 76px;
+    height: 76px;
+    border-color: #786450  #786450 #786450 transparent;
+    z-index: 10;
+}
+
+.outer-circle{
+    width: 82px;
+    height: 82px;
+    border-color: #786450 transparent #786450 #786450 ;
+    z-index: 11;
+}
+
+.animated-image{
+    position: relative;
+    width: 82px;
+    height: 82px;
+}
+
+.animated-image:hover .inner-circle{
+    transform: rotate(360deg);
+}
+
+.animated-image:hover .outer-circle{
+    transform: rotate(-360deg);
+}
+
+.profile-info{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.animated-image img{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+
+
+
+
